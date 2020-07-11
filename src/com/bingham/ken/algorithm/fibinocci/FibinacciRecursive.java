@@ -14,12 +14,14 @@ public class FibinacciRecursive {
         fibArray = new int[max];
     }
 
-    public int getFib(int num) {
+    public int[] getFib(int num) {
 
         if(index == max){
-           
-            return 1;
+            fibArray[0] = 1;
+            return fibArray;
         }
+
+        fibArray[index++] = num;
 
         int sum = previous + num ;
         previous = num;
@@ -32,14 +34,13 @@ public class FibinacciRecursive {
 
         for(int fib : fibArray){
 
-            System.out.println(fib);
+            System.out.print(fib + " ");
         }
     }
 
     public static void main(String[] args){
 
         new FibinacciRecursive(15).display();
-
 
     }
 }
